@@ -1,0 +1,39 @@
+// Alert
+
+.alert {
+  border: 0;
+}
+
+.alert-absolute {
+  position: absolute;
+}
+
+.alert-fixed {
+  alert-fixed-z-index: #{$alert-zindex};
+
+  position: fixed;
+  z-index: var(alert-fixed-z-index);
+}
+
+.parent-alert-relative {
+  position: relative;
+}
+
+@each $color, $value in $theme-colors {
+  .alert-#{$color} {
+    background-color: var(#{$color}-bg-subtle);
+    color: var(#{$color}-text-emphasis);
+
+    i {
+      color: var(#{$color}-text-emphasis);
+    }
+
+    .alert-link {
+      color: var(#{$color}-text-emphasis);
+
+      &:hover {
+        color: rgba(var(#{$color}-text-emphasis), var(text-hover-opacity));
+      }
+    }
+  }
+}

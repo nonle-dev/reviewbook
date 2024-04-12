@@ -1,0 +1,54 @@
+//
+// Toast styles
+//
+
+.toast {
+  // scss-docs-start toast-css-vars
+  toast-border-bottom-width: #{$toast-border-bottom-width};
+  toast-btn-close-width: #{$toast-btn-close-width};
+  toast-btn-close-mr: #{$toast-btn-close-mr};
+  toast-btn-close-ml: #{$toast-btn-close-ml};
+  toast-bg: #{$toast-background-color};
+  toast-header-bg: #{$toast-header-background-color};
+  // scss-docs-end toast-css-vars
+
+  border: 0;
+
+  .btn-close {
+    width: var(toast-btn-close-width);
+  }
+}
+
+.toast-header {
+  border-bottom-width: var(toast-border-bottom-width);
+
+  .btn-close {
+    margin-right: var(toast-btn-close-mr);
+    margin-left: var(toast-btn-close-ml);
+  }
+}
+
+.parent-toast-relative {
+  position: relative;
+}
+
+.toast-absolute {
+  position: absolute;
+}
+
+.toast-fixed {
+  position: fixed;
+  z-index: var(toast-zindex);
+}
+
+@each $color, $value in $theme-colors {
+  .toast-#{$color} {
+    background-color: var(#{$color}-bg-subtle);
+    color: var(#{$color}-text-emphasis);
+    border-color: var(#{$color}-border-subtle);
+
+    i {
+      color: var(#{$color}-text-emphasis);
+    }
+  }
+}

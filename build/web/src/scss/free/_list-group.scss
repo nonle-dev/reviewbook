@@ -1,0 +1,68 @@
+//
+// List group styles
+//
+
+.list-group {
+  list-group-item-transition-time: #{$list-group-item-transition-time};
+}
+
+.list-group-item-action {
+  transition: var(list-group-item-transition-time);
+
+  // Hover state
+  &:hover {
+    transition: var(list-group-item-transition-time);
+  }
+}
+
+.list-group-light {
+  list-group-light-item-py: #{$list-group-light-item-py};
+  list-group-light-item-border: #{$list-group-light-item-border};
+  list-group-light-item-border-width: #{$list-group-light-item-border-width};
+  list-group-light-active-border-radius: #{$list-group-light-active-border-radius};
+  list-group-light-active-bg: #{$list-group-light-active-bg};
+  list-group-light-active-color: #{$list-group-light-active-color};
+
+  .list-group-item {
+    padding: var(list-group-light-item-py) 0;
+    border: var(list-group-light-item-border);
+  }
+  > .list-group-item {
+    border-width: 0 0 var(list-group-light-item-border-width);
+    &:last-of-type {
+      border: none;
+    }
+  }
+  .active {
+    border: none;
+    border-radius: var(list-group-light-active-border-radius);
+    background-color: var(list-group-light-active-bg);
+    color: var(list-group-light-active-color);
+  }
+  .list-group-item-action {
+    &:hover {
+      border-radius: var(list-group-light-active-border-radius);
+    }
+    &:focus {
+      border-radius: var(list-group-light-active-border-radius);
+    }
+  }
+}
+
+.list-group-small {
+  list-group-small-item-py: #{$list-group-small-item-py};
+  .list-group-item {
+    padding: var(list-group-small-item-py) 0;
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .list-group-item-#{$color} {
+    background-color: var(#{$color}-bg-subtle);
+    color: var(#{$color}-text-emphasis);
+
+    i {
+      color: var(#{$color}-link-emphasis);
+    }
+  }
+}

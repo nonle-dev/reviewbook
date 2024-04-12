@@ -1,0 +1,49 @@
+// Scrollspy
+
+.nav-pills {
+  &.menu-sidebar {
+    .nav-link {
+      scrollspy-menu-sidebar-font-size: #{$scrollspy-menu-sidebar-font-size};
+      scrollspy-menu-sidebar-color: #{$scrollspy-menu-sidebar-color};
+      scrollspy-menu-sidebar-line-height: #{$scrollspy-menu-sidebar-line-height};
+      scrollspy-menu-sidebar-padding-x: #{$scrollspy-menu-sidebar-padding-x};
+      scrollspy-menu-sidebar-font-weight: #{$scrollspy-menu-sidebar-font-weight};
+      scrollspy-menu-sidebar-transition: #{$scrollspy-menu-sidebar-transition};
+      scrollspy-menu-sidebar-margin-y: #{$scrollspy-menu-sidebar-margin-y};
+
+      font-size: var(scrollspy-menu-sidebar-font-size);
+      background-color: transparent;
+      color: var(scrollspy-menu-sidebar-color);
+      line-height: var(scrollspy-menu-sidebar-line-height);
+      padding: 0 var(scrollspy-menu-sidebar-padding-x);
+      font-weight: var(scrollspy-menu-sidebar-font-weight);
+      transition: var(scrollspy-menu-sidebar-transition);
+      text-transform: initial;
+      margin-top: var(scrollspy-menu-sidebar-margin-y);
+      margin-bottom: var(scrollspy-menu-sidebar-margin-y);
+    }
+
+    .nav-link.active,
+    .show > .nav-link {
+      scrollspy-menu-sidebar-active-color: #{$scrollspy-menu-sidebar-active-color};
+      scrollspy-menu-sidebar-active-font-weight: #{$scrollspy-menu-sidebar-active-font-weight};
+      scrollspy-menu-sidebar-active-border-width: #{$scrollspy-menu-sidebar-active-border-width};
+      scrollspy-menu-sidebar-active-border-color: #{$scrollspy-menu-sidebar-active-border-color};
+
+      background-color: transparent;
+      box-shadow: none;
+      color: var(scrollspy-menu-sidebar-active-color);
+      font-weight: var(scrollspy-menu-sidebar-active-font-weight);
+      border-left: var(scrollspy-menu-sidebar-active-border-width) solid
+        var(scrollspy-menu-sidebar-active-border-color);
+      border-radius: 0;
+    }
+
+    .collapsible-scrollspy ~ .nav {
+      scrollspy-collapsible-nav-transition-time: #{$scrollspy-collapsible-nav-transition-time};
+
+      transition: height var(scrollspy-collapsible-nav-transition-time) ease;
+      flex-wrap: nowrap;
+    }
+  }
+}

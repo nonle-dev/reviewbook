@@ -1,0 +1,101 @@
+// Button variants
+//
+// Easily pump out default styles, as well as :hover, :focus, :active,
+// and disabled options for all buttons
+
+// scss-docs-start btn-variant-mixin
+@mixin button-variant(
+  $background,
+  $border,
+  $color: color-contrast($background),
+  $shadow: $btn-contextual-box-shadow
+    if(
+      $color == $color-contrast-light,
+      shade-color($background, $btn-hover-bg-shade-amount),
+      tint-color($background, $btn-hover-bg-tint-amount)
+    ),
+  $hover-background:
+    if(
+      $color == $color-contrast-light,
+      shade-color($background, $btn-hover-bg-shade-amount),
+      tint-color($background, $btn-hover-bg-tint-amount)
+    ),
+  $hover-border:
+    if(
+      $color == $color-contrast-light,
+      shade-color($border, $btn-hover-border-shade-amount),
+      tint-color($border, $btn-hover-border-tint-amount)
+    ),
+  $hover-color: $color,
+  $focus-background:
+    if(
+      $color == $color-contrast-light,
+      shade-color($background, $btn-focus-bg-shade-amount),
+      tint-color($background, $btn-focus-bg-tint-amount)
+    ),
+  $focus-color: $color,
+  $active-border:
+    if(
+      $color == $color-contrast-light,
+      shade-color($border, $btn-active-border-shade-amount),
+      tint-color($border, $btn-active-border-tint-amount)
+    ),
+  $active-background:
+    if(
+      $color == $color-contrast-light,
+      shade-color($background, $btn-active-bg-shade-amount),
+      tint-color($background, $btn-active-bg-tint-amount)
+    ),
+  $active-color: $color
+) {
+  btn-bg: #{$background};
+  btn-color: #{$color};
+  btn-box-shadow: #{$shadow};
+  btn-hover-bg: #{$hover-background};
+  btn-hover-color: #{$hover-color};
+  btn-focus-bg: #{$focus-background};
+  btn-focus-color: #{$focus-color};
+  btn-active-bg: #{$active-background};
+  btn-active-color: #{$active-color};
+}
+// scss-docs-end btn-variant-mixin
+
+// scss-docs-start btn-outline-variant-mixin
+@mixin button-outline-variant(
+  $color,
+  $hover-color,
+  $focus-color,
+  $active-color,
+  $hover-background: tint-color($color, $btn-outline-hover-bg-tint-amount),
+  $focus-background: tint-color($color, $btn-outline-focus-bg-tint-amount),
+  $active-background: tint-color($color, $btn-outline-active-bg-tint-amount)
+) {
+  btn-bg: transparent;
+  btn-color: #{$color};
+  btn-hover-bg: #{$hover-background};
+  btn-hover-color: #{$hover-color};
+  btn-focus-bg: #{$focus-background};
+  btn-focus-color: #{$focus-color};
+  btn-active-bg: #{$active-background};
+  btn-active-color: #{$active-color};
+}
+// scss-docs-end btn-outline-variant-mixin
+
+// scss-docs-start btn-size-mixin
+@mixin button-size($padding-top, $padding-bottom, $padding-x, $font-size, $line-height) {
+  btn-padding-top: #{$padding-top};
+  btn-padding-bottom: #{$padding-bottom};
+  btn-padding-x: #{$padding-x};
+  @include rfs($font-size, btn-font-size);
+  btn-line-height: #{$line-height};
+}
+// scss-docs-end btn-size-mixin
+
+// Button size variant outline
+@mixin button-outline-size($padding-top, $padding-bottom, $padding-x, $font-size, $line-height) {
+  btn-padding-top: #{$padding-top};
+  btn-padding-bottom: #{$padding-bottom};
+  btn-padding-x: #{$padding-x};
+  @include rfs($font-size, btn-font-size);
+  btn-line-height: #{$line-height};
+}

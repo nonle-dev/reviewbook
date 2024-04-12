@@ -1,0 +1,31 @@
+//
+// Carousel styles
+//
+
+.carousel-control-prev-icon {
+  &::after {
+    content: '\f053';
+    carousel-control-icon-font-size: #{$carousel-control-icon-font-size};
+    carousel-control-icon-font-weight: #{$font-weight-bold};
+
+    font-weight: var(carousel-control-icon-font-weight);
+    font-size: var(carousel-control-icon-font-size);
+    font-family: 'Font Awesome 6 Pro', 'Font Awesome 6 Free';
+  }
+}
+.carousel-control-next-icon {
+  &::after {
+    content: '\f054';
+    carousel-control-icon-font-size: #{$carousel-control-icon-font-size};
+    carousel-control-icon-font-weight: #{$font-weight-bold};
+
+    font-weight: var(carousel-control-icon-font-weight);
+    font-size: var(carousel-control-icon-font-size);
+    font-family: 'Font Awesome 6 Pro', 'Font Awesome 6 Free';
+  }
+}
+.carousel-indicators {
+  [data-mdb-target] {
+    @extend [data-bs-target] !optional;
+  }
+}

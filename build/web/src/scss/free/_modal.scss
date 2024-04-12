@@ -1,0 +1,12 @@
+//
+// Modal styles
+//
+
+.modal-content {
+  // scss-docs-start modal-css-vars
+  modal-box-shadow: #{$modal-box-shadow};
+  // scss-docs-end modal-css-vars
+
+  border: 0;
+  box-shadow: var(modal-box-shadow);
+}

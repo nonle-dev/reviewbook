@@ -1,0 +1,68 @@
+// stylelint-disable declaration-no-important, selector-no-qualifying-type, property-no-vendor-prefix
+
+// Reboot
+//
+// Normalization of HTML elements, manually forked from Normalize.css to remove
+// styles targeting irrelevant browsers while applying new styles.
+
+// Dividers
+
+hr:not([size]) {
+  &.hr {
+    divider-height: #{$divider-height};
+    divider-bg: #{$divider-bg};
+    divider-opacity: #{$divider-opacity};
+    divider-blurry-bg: transparent;
+    divider-blurry-bg-image: #{$divider-blurry-bg-image};
+    divider-blurry-height: #{$divider-blurry-height};
+    divider-blurry-opacity: #{$divider-blurry-opacity};
+
+    height: var(divider-height);
+    background-color: var(divider-bg);
+    opacity: var(divider-opacity);
+
+    &.hr-blurry {
+      background-color: var(divider-blurry-bg);
+      background-image: var(divider-blurry-bg-image);
+      height: var(divider-blurry-height);
+      opacity: var(divider-blurry-opacity);
+    }
+  }
+
+  &.vr {
+    height: auto;
+  }
+}
+
+hr.hr,
+hr.vr {
+  border-top: none !important;
+}
+
+.vr {
+  divider-width: #{$divider-width};
+  divider-bg: #{$divider-bg};
+  divider-opacity: #{$divider-opacity};
+
+  width: var(divider-width);
+  background-color: var(divider-bg);
+  opacity: var(divider-opacity);
+}
+
+.vr-blurry {
+  divider-blurry-vr-bg-image: #{$divider-blurry-vr-bg-image};
+  divider-blurry-vr-width: #{$divider-blurry-vr-width};
+  divider-blurry-opacity: #{$divider-blurry-opacity};
+
+  background-image: var(divider-blurry-vr-bg-image);
+  width: var(divider-blurry-vr-width);
+  opacity: var(divider-blurry-opacity);
+}
+
+// Links
+
+a {
+  link-decoration: #{$link-decoration};
+
+  text-decoration: var(link-decoration);
+}

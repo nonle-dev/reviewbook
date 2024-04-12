@@ -1,0 +1,53 @@
+//
+// Card styles
+//
+
+.card {
+  border: 0;
+
+  .bg-image {
+    border-top-left-radius: var(card-border-radius);
+    border-top-right-radius: var(card-border-radius);
+  }
+
+  &[class*='bg-'] {
+    .card-header {
+      card-header-border-bottom-color: #{$card-border-color};
+
+      border-bottom-color: var(card-header-border-bottom-color);
+    }
+    .card-footer {
+      card-footer-border-top-color: #{$card-border-color};
+
+      border-top-color: var(card-footer-border-top-color);
+    }
+  }
+}
+
+.card-header {
+  card-header-border-width: #{$card-header-border-width};
+  card-header-border-color: #{$card-header-border-color};
+
+  border-bottom: var(card-header-border-width) solid
+    var(card-header-border-color);
+}
+
+.card-body {
+  &[class*='bg-'] {
+    border-bottom-left-radius: var(card-border-radius);
+    border-bottom-right-radius: var(card-border-radius);
+  }
+}
+
+.card-footer {
+  card-footer-border-color: #{$card-footer-border-color};
+  card-footer-border-width: #{$card-footer-border-width};
+
+  border-top: var(card-footer-border-width) solid
+    var(card-footer-border-color);
+}
+
+.card-img-left {
+  border-top-left-radius: var(card-border-radius);
+  border-bottom-left-radius: var(card-border-radius);
+}

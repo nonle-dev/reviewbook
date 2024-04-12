@@ -1,0 +1,97 @@
+//
+// Pagination styles
+//
+
+.pagination {
+  // scss-docs-start pagination-css-vars
+  pagination-border-radius: #{$pagination-border-radius};
+  pagination-active-transition: #{$pagination-active-transition};
+  pagination-active-font-weight: #{$pagination-active-font-weight};
+  pagination-circle-border-radius: #{$pagination-circle-border-radius};
+  pagination-circle-padding-x: #{$pagination-circle-padding-x};
+  pagination-circle-padding-l-lg: #{$pagination-circle-lg-padding-left};
+  pagination-circle-padding-r-lg: #{$pagination-circle-lg-padding-right};
+  pagination-circle-padding-l-sm: #{$pagination-circle-sm-padding-left};
+  pagination-circle-padding-r-sm: #{$pagination-circle-sm-padding-right};
+  // scss-docs-end pagination-css-vars
+}
+
+.page-link {
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  border-radius: var(pagination-border-radius);
+
+  &:focus {
+    box-shadow: none;
+  }
+
+  &.active,
+  .active > & {
+    border: 0;
+    transition: var(pagination-active-transition);
+    font-weight: var(pagination-active-font-weight);
+  }
+}
+
+.page-item {
+  &:not(:first-child) {
+    .page-link {
+      margin-left: 0;
+    }
+  }
+
+  &:first-child {
+    .page-link {
+      border-top-left-radius: var(pagination-border-radius);
+      border-bottom-left-radius: var(pagination-border-radius);
+    }
+  }
+
+  &:last-child {
+    .page-link {
+      border-top-right-radius: var(pagination-border-radius);
+      border-bottom-right-radius: var(pagination-border-radius);
+    }
+  }
+}
+
+//
+// Pagination circle option
+//
+
+.pagination-circle {
+  .page-item {
+    &:first-child {
+      .page-link {
+        border-radius: var(pagination-circle-border-radius);
+      }
+    }
+
+    &:last-child {
+      .page-link {
+        border-radius: var(pagination-circle-border-radius);
+      }
+    }
+  }
+
+  .page-link {
+    border-radius: var(pagination-circle-border-radius);
+    padding-left: var(pagination-circle-padding-x);
+    padding-right: var(pagination-circle-padding-x);
+  }
+
+  &.pagination-lg {
+    .page-link {
+      padding-left: var(pagination-circle-padding-l-lg);
+      padding-right: var(pagination-circle-padding-r-lg);
+    }
+  }
+
+  &.pagination-sm {
+    .page-link {
+      padding-left: var(pagination-circle-padding-l-sm);
+      padding-right: var(pagination-circle-padding-r-sm);
+    }
+  }
+}

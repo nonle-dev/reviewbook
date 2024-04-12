@@ -1,0 +1,58 @@
+// range
+.range {
+  range-thumb-height: #{$range-thumb-height};
+  range-thumb-width: #{$range-thumb-width};
+  range-thumb-top: #{$range-thumb-top};
+  range-thumb-margin-left: #{$range-thumb-margin-left};
+  range-thumb-border-radius: #{$range-thumb-border-radius};
+  range-thumb-transform: #{$range-thumb-transform};
+  range-thumb-transition: #{$range-thumb-transition};
+  range-thumb-value-font-size: #{$range-thumb-value-font-size};
+  range-thumb-value-line-height: #{$range-thumb-value-line-height};
+  range-thumb-value-color: #{$range-thumb-value-color};
+  range-thumb-value-font-weight: #{$range-thumb-value-font-weight};
+  range-thumb-background: #{$range-thumb-background};
+
+  position: relative;
+
+  .thumb {
+    position: absolute;
+    display: block;
+    height: var(range-thumb-height);
+    width: var(range-thumb-width);
+    top: var(range-thumb-top);
+    margin-left: var(range-thumb-margin-left);
+    text-align: center;
+    border-radius: var(range-thumb-border-radius);
+    transform: var(range-thumb-transform);
+    transform-origin: bottom;
+    transition: var(range-thumb-transition);
+
+    &:after {
+      position: absolute;
+      display: block;
+      content: '';
+      transform: translateX(-50%);
+      width: 100%;
+      height: 100%;
+      top: 0;
+      border-radius: var(range-thumb-border-radius);
+      transform: rotate(-45deg);
+      background: var(range-thumb-background);
+      z-index: -1;
+    }
+
+    .thumb-value {
+      display: block;
+      font-size: var(range-thumb-value-font-size);
+      line-height: var(range-thumb-value-line-height);
+      color: var(range-thumb-value-color);
+      font-weight: var(range-thumb-value-font-weight);
+      z-index: 2;
+    }
+
+    &.thumb-active {
+      transform: scale(1);
+    }
+  }
+}

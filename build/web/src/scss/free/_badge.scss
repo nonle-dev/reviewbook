@@ -1,0 +1,51 @@
+//
+// Badge styles
+//
+// Additional badge options tailored to the MDB style
+
+// A "dot" badge, which is useful, for example, for icons
+.badge-dot {
+  badge-border-radius: #{$badge-dot-border-radius};
+  badge-height: #{$badge-dot-height};
+  badge-width: #{$badge-dot-width};
+  badge-margin-left: #{$badge-dot-margin-left};
+
+  position: absolute;
+  min-width: 0;
+  width: var(badge-width);
+  height: var(badge-height);
+  border-radius: var(badge-border-radius);
+  padding: 0;
+  margin-left: var(badge-margin-left);
+
+  &:empty {
+    display: inline-block;
+  }
+}
+
+// "Notification" badge that shows the number of notifications, e.g. the number of unread messages
+.badge-notification {
+  badge-font-size: #{$badge-notification-font-size};
+  badge-padding-x: #{$badge-notification-padding-x};
+  badge-padding-y: #{$badge-notification-padding-y};
+  badge-margin-top: #{$badge-notification-margin-top};
+  badge-margin-left: #{$badge-notification-margin-left};
+
+  position: absolute;
+  font-size: var(badge-font-size);
+  padding: var(badge-padding-y) var(badge-padding-x);
+  margin-top: var(badge-margin-top);
+  margin-left: var(badge-margin-left);
+}
+
+// Contextual colors options
+@each $color, $value in $theme-colors {
+  .badge-#{$color} {
+    background-color: var(#{$color}-bg-subtle);
+    color: var(#{$color}-text-emphasis);
+
+    i {
+      color: var(#{$color}-text-emphasis);
+    }
+  }
+}

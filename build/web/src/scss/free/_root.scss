@@ -1,0 +1,60 @@
+//
+// Root and body
+//
+
+:root,
+[data-mdb-theme='light'] {
+  --mdb-font-roboto: #{inspect($font-family-roboto)};
+  --mdb-bg-opacity: 1;
+  --mdb-text-hover-opacity: 0.8;
+
+  surface-color: #{$surface-color};
+  surface-color-rgb: #{to-rgb($surface-color)};
+  surface-bg: #{$surface-bg};
+  surface-inverted-color: #{$surface-inverted-color};
+  surface-inverted-color-rgb: #{to-rgb($surface-inverted-color)};
+  surface-inverted-bg: #{$surface-inverted-bg};
+  divider-color: #{$divider-color};
+  divider-blurry-color: #{$divider-blurry-color};
+  highlight-bg-color: #{$highlight-bg-color};
+  scrollbar-rail-bg: #{$scrollbar-rail-bg};
+  scrollbar-thumb-bg: #{$scrollbar-thumb-bg};
+  picker-header-bg: #{$picker-header-bg};
+  timepicker-clock-face-bg: #{$timepicker-clock-face-bg};
+  sidenav-backdrop-opacity: #{$sidenav-backdrop-opacity};
+  form-control-border-color: #{$form-control-border-color};
+  form-control-label-color: #{$form-control-label-color};
+  form-control-disabled-bg: #{$form-control-disabled-bg};
+  box-shadow-color: #{$box-shadow-color};
+  box-shadow-color-rgb: #{to-rgb($box-shadow-color)};
+  stepper-mobile-bg: #{$stepper-mobile-bg};
+}
+
+@if $enable-dark-mode {
+  @include color-mode(dark, true) {
+    color-scheme: dark;
+
+    // scss-docs-start root-dark-mode-vars
+    surface-color: #{$surface-color-dark};
+    surface-color-rgb: #{to-rgb($surface-color-dark)};
+    surface-bg: #{$surface-bg-dark};
+    surface-inverted-color: #{$surface-inverted-color-dark};
+    surface-inverted-color-rgb: #{to-rgb($surface-inverted-color-dark)};
+    surface-inverted-bg: #{$surface-inverted-bg-dark};
+    divider-color: #{$divider-color-dark};
+    divider-blurry-color: #{$divider-blurry-color-dark};
+    highlight-bg-color: #{$highlight-bg-color-dark};
+    scrollbar-rail-bg: #{$scrollbar-rail-bg-dark};
+    scrollbar-thumb-bg: #{$scrollbar-thumb-bg-dark};
+    picker-header-bg: #{$picker-header-bg-dark};
+    timepicker-clock-face-bg: #{$timepicker-clock-face-bg-dark};
+    sidenav-backdrop-opacity: #{$sidenav-backdrop-opacity-dark};
+    form-control-border-color: #{$form-control-border-color-dark};
+    form-control-label-color: #{$form-control-label-color-dark};
+    form-control-disabled-bg: #{$form-control-disabled-bg-dark};
+    box-shadow-color: #{$box-shadow-color-dark};
+    box-shadow-color-rgb: #{to-rgb($box-shadow-color-dark)};
+    stepper-mobile-bg: #{$stepper-mobile-bg-dark};
+    // scss-docs-end root-dark-mode-vars
+  }
+}
